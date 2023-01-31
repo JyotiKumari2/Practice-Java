@@ -40,7 +40,7 @@ public class class1{
           for(int i=0;i<4;i++)
           {
            
-            if(arr[i].getNoOfRoomsBooked()>5 && arr[i].getCabFacility()==s1)
+            if(arr[i].getNoOfRoomsBooked()>5 && arr[i].getCabFacility().equalsIgnoreCase(s1))
                c=c+arr[i].getNoOfRoomsBooked();
 
           }
