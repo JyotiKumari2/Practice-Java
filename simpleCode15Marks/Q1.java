@@ -1,3 +1,9 @@
+// Count of odd digits in a given number , if odd digit count is greater than 3 
+// print odd count otherwise print "IT IS NOT A VALID NUMBER"
+//Example :
+// Input : 12357, odd digit count==4 therefore,
+//Output: 4
+
 import java.util.*;
 public class Q1{
 public static void main(String[]args)
@@ -17,7 +23,7 @@ public static void main(String[]args)
     if(odd>3)
     System.out.println(odd);
     else
-    System.out.println("IT IS NOT A NUMBER");
+    System.out.println("IT IS NOT A VALID NUMBER");
 
 }
     

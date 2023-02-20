@@ -1,3 +1,8 @@
+//Write a program to print the unique characters present in the given string in the same sequence 
+//as they appear in the input
+//Example:
+//Input : xperience
+//Output: xperinc 
 import java.util.*;
 public class Q8{
     public static void main(String[]args)

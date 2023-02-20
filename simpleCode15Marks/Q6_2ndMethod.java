@@ -1,3 +1,9 @@
+//write a program to print the smallest vowel in a given string
+//example:
+//input : matrix
+//output : a
+// method 2
+
 import java.util.*;
 public class Q6_2ndMethod{
     public static void main(String[] args)
