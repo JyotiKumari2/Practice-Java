@@ -130,15 +130,19 @@ public class class6{
     {
 
 
-        double []ary = new double[5];
-        int k=0;
+        Antenna []ary = new Antenna[0];
+        // int k=0;
         for(int i=0;i<arr.length;i++)
         {
             if(arr[i].getAntennaVSWR()<db)
             {
-                ary[k++]=arr[i].getAntennaVSWR();
+                ary=Arrays.copyOf(ary,ary.length+1) ;
+                ary[ary.length-1]=arr[i];
             }
         }
+
+        
+
 
         
         return null;
