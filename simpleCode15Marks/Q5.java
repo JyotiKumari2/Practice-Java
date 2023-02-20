@@ -1,3 +1,8 @@
+//Reverse a given string the reverse string must be in lowercase letter
+//example: 
+//input: Welcome
+//output: emoclew
+
 import java.util.*;
 public class Q5{
     public static void main(String[]args)
