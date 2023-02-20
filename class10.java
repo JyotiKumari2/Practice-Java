@@ -29,3 +29,28 @@
 // Cannot reverse.
 
 // ***********************************************************************************
+
+import java.util.*;
+public class class10{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m=0;
+        if(n%2==0)
+         System.out.println("Cannot Reverse");
+         else{
+            while(n!=0)
+            {
+                int rem = n%10;
+                m = (m*10)+rem;
+                n=n/10;
+
+                
+
+            }
+            System.out.println(m);
+            
+         }
+    }
+}

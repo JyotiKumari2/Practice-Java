@@ -154,3 +154,141 @@
 
 
 //https://tcsxplorejavacodingquestions.blogspot.com/2022/02/solving-tcs-cpa-java.html
+
+import java.util.*;
+public class class8{
+    public static void main(String[] args)
+    {
+         Scanner sc = new Scanner(System.in);
+         Sim []arr=new Sim[5];
+         for(int i=0;i<arr.length;i++)
+         {
+
+ 
+            int a = sc.nextInt(); sc.nextLine();
+            String b = sc.nextLine();
+            double c = sc.nextDouble(); sc.nextLine();
+            double d = sc.nextDouble(); sc.nextLine();
+            String e = sc.nextLine();
+            arr[i]= new Sim(a,b,c,d,e);
+
+         }
+
+         String circle1= sc.nextLine();
+         String circle2= sc.nextLine();
+         sc.close();
+         Sim ans[] = transferCustomerCircle(arr,circle1,circle2);
+         
+
+    }
+
+    public static Sim[] transferCustomerCircle(Sim[] arr, String circle1, String circle2)
+    {
+
+        double[] rate=new double[0];
+        for(int i=0;i<5;i++)
+        {
+            if(arr[i].getCircle().equalsIgnoreCase(circle1))
+            {
+                arr[i].circle=circle2;
+                rate = Arrays.copyOf(rate,rate.length+1);
+                rate[rate.length-1]=arr[i].getRatePerSecond();
+
+
+
+            }
+        }
+
+        Arrays.sort(rate);
+        Sim[]temp=new Sim[0];
+        for(int i=rate.length-1;i>=0;i--)
+        {
+            for(int j=0;i<arr.length;j++)
+            {
+                if(arr[j].getRatePerSecond()==rate[i]);
+                {
+                    temp=Arrays.copyOf(temp,temp.length+1);
+                    temp[temp.length-1]=arr[j];
+
+                }
+            }
+        }
+        if(rate.length>0)
+          return temp;
+        else
+        return null;
+    }
+}
+
+class Sim{
+ 
+
+     int simId;
+     String customerName;
+     double balance;
+     double ratePerSecond;
+     String circle;
+
+     // GETTERS
+     public int getSimId()
+     {
+        return simId;
+     }
+
+     public String getCustomerName()
+     {
+        return customerName;
+     }
+
+     public double getBalance()
+     {
+        return balance;
+     }
+
+     public double getRatePerSecond()
+     {
+        return ratePerSecond;
+     }
+     public String getCircle()
+     {
+        return circle;
+     }
+
+
+     // SETTERS
+     public void setSimId(int simId)
+     {
+        this.simId=simId;
+
+     }
+
+     public void setCustomerName(String customerName)
+     {
+        this.customerName=customerName;
+     }
+
+     public void setBalance(double balance)
+     {
+        this.balance=balance;
+     }
+     public void setRatePerSecond(double ratePerSecond)
+     {
+        this.ratePerSecond=ratePerSecond;
+     }
+
+     public void setCircle(String circle)
+     {
+        this.circle=circle;
+     }
+
+
+     // CONSTRUCTOR;
+     Sim(int simId, String customerName, double balance, double ratePerSecond, String circle)
+     {
+        this.simId=simId;
+        this.customerName=customerName;
+        this.balance=balance;
+        this.ratePerSecond=ratePerSecond;
+        this.circle=circle;
+     }
+}

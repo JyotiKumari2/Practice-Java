@@ -172,3 +172,138 @@
 
 
 //https://tcsxplorejavacodingquestions.blogspot.com/2022/06/22-may-2022-cpa-java-coding-solution.html
+
+
+import java.util.*;
+public class class11{
+   public static void main(String[] args)
+   {
+      Scanner sc=new Scanner(System.in);
+      RRT []arr=new RRT[4];
+      for(int i=0;i<arr.length;i++)
+      {        
+          int a = sc.nextInt();  sc.nextLine();
+          String b = sc.nextLine();
+          String c = sc.nextLine();
+          int d = sc.nextInt(); sc.nextLine();
+          String e = sc.nextLine();
+          arr[i]=new RRT(a,b,c,d,e);    
+      }
+
+      String givenProject = sc.nextLine();
+      sc.close();
+      RRT ans = getHighestPriorityTicket(arr,givenProject);
+      if(ans==null)
+      System.out.println("No such Ticket");
+      else
+      {
+         int a= ans.getTicketNo();
+         String b = ans.getAssignedTo();
+         String c = ans.getRaisedBy();
+         System.out.println(a);
+         System.out.println(b);
+         System.out.println(c);
+
+      }
+
+
+
+   }
+
+   public static RRT getHighestPriorityTicket(RRT[]arr, String givenProject)
+   {
+      
+      int pr=100;
+      RRT a=null;
+      for(int i=0;i<arr.length;i++)
+      {
+         if(arr[i].getProject().equalsIgnoreCase(givenProject))
+         {
+            if(arr[i].getPriority()<pr)
+            {
+               pr=arr[i].getPriority();
+               a=arr[i];
+            }
+               
+         }
+      }
+      return a;
+   }
+}
+
+class RRT{
+ 
+
+
+     int ticketNo;
+     String raisedBy;
+     String assignedTo;
+     int priority;
+     String project;
+
+     public int getTicketNo()
+     {
+      return ticketNo;
+
+     }
+
+     public String getRaisedBy()
+     {
+      return raisedBy;
+     }
+
+     public String getAssignedTo()
+     {
+      return assignedTo;
+     }
+
+     public int getPriority()
+     {
+      return priority;
+     }
+
+     public String getProject()
+     {
+      return project;
+     }
+
+     // Setters;
+     public void setTicketNo(int ticketNo)
+     {
+      this.ticketNo=ticketNo;
+
+     }
+
+     public void setRaisedBy(String raisedBy)
+     {
+      this.raisedBy=raisedBy;
+     }
+
+     public void setAssignedTo(String assignedTo)
+     {
+      this.assignedTo=assignedTo;
+     }
+
+     public void setPriority()
+     {
+      this.priority=priority;
+     }
+     public void setProject()
+     {
+      this.project=project;
+     }
+
+     // CONSTRUCTOR
+     
+
+     RRT(int ticketNo, String raisedBy, String assignedTo, int priority, String project)
+     {
+      this.ticketNo=ticketNo;
+      this.raisedBy=raisedBy;
+      this.assignedTo=assignedTo;
+      this.priority=priority;
+      this.project=project;
+
+     }
+     
+}
